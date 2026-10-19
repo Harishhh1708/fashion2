@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/dress-designer.css">
+<script>try{var t=localStorage.getItem("fc-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<title>Dress designer · FashionCAD Studio</title>
+<script>window.addEventListener("error",function(e){if(document.getElementById("fc-err"))return;var d=document.createElement("div");d.id="fc-err";d.style.cssText="background:#b3261e;color:#fff;padding:.6rem 1rem;text-align:center;font:600 14px sans-serif";d.textContent="A script failed to run: "+(e.message||"unknown error")+". Refresh with Ctrl+F5.";function a(){document.body.prepend(d)}document.body?a():document.addEventListener("DOMContentLoaded",a)});</script></head>
+<body class="dd"><div class="app">
+<header class="top"><a class="logo" href="dashboard.html">Fashion<i>CAD</i></a>
+<input id="dname" class="dname" type="text" maxlength="40" aria-label="Design name" value="My dress">
+<span class="sp"></span>
+<span id="status" class="stt"></span>
+<button class="mini" id="reset" title="Start again">New</button>
+<button class="mini" id="png">Picture (PNG)</button>
+<button class="mini" id="save">Save design</button>
+<button class="mini pri" id="pdf">Download stitching guide (PDF)</button></header>
+<div class="ddbody">
+<aside class="dpanel" aria-label="Design controls">
+<nav class="tabs" id="tabs" role="tablist"></nav>
+<div id="panes"></div>
+<div class="dfoot"><button class="bigbtn" id="pdf2">Download stitching guide (PDF)</button>
+<small>Cutting sizes, fabric needed, true-size pattern pages and step-by-step stitching, made from this design.</small></div>
+</aside>
+<div class="dstage" id="stage"><div id="msg" class="msg" hidden role="alert"></div>
+<canvas id="cv" aria-label="3D dress preview"></canvas>
+<div class="stats" id="stats" aria-live="polite"></div>
+<div class="vbtns" id="views"></div></div>
+</div></div>
+<script>setTimeout(function(){if(!window.__ddReady){var m=document.getElementById("msg");if(m){m.textContent="The 3D engine did not start. It loads from the internet (CDN). Check your connection and refresh. Open the GitHub Pages link, not the file from your computer.";m.className="msg error";m.hidden=false}}},9000)</script>
+<script type="module" src="js/dress-designer.js"></script></body></html>
